@@ -11,7 +11,7 @@ import MenuItem from 'material-ui/MenuItem';
 import { purchaseClassification, getModels } from 'services/web3Api';
 import { classifyImage } from 'services/redhioApi';
 import { toastError } from 'services/toastEmitter';
-import './styles/main.scss';
+import './styles/shopify.scss';
 
 export default class Shopify extends Component {
 
@@ -196,4 +196,3 @@ export default class Shopify extends Component {
 Shopify.propTypes = {
   account: PropTypes.object
 };
-

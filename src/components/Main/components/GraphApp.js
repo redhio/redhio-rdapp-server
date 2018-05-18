@@ -21,6 +21,7 @@ class GraphApp extends Component {
                 <NumberWidgetContainer href="http://api.redh.io:8000/stats/response" heading="4 Hour Response %" />
                 <NumberWidgetContainer href="http://api.redh.io:8000/stats/solved" heading="7 Day Solved %" />
             </div>
+
         );
     }
 }

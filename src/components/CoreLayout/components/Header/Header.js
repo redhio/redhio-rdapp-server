@@ -24,6 +24,11 @@ export default class Header extends Component {
         { this.props.account
           ? <div className="header-container__navigation">
             <div className="header-container__navigation__button">
+              <FlatButton label="Dashboard" primary onClick={() => this.gotoPath('')} />
+              <FlatButton label="Profile" primary onClick={() => this.gotoPath('')} />
+              <FlatButton label="Classifier" primary onClick={() => this.gotoPath('classifier')} />
+              <FlatButton label="Solver" primary onClick={() => this.gotoPath('api/solve/VI')} />
+              <FlatButton label="Engines" primary onClick={() => this.gotoPath('')} />
               <FlatButton label="Log Out" primary onClick={() => this.props.onLogout()} />
             </div>
           </div>
@@ -45,4 +50,3 @@ Header.propTypes = {
   account: PropTypes.object,
   onLogout: PropTypes.func
 };
-
