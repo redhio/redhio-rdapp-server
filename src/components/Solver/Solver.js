@@ -93,6 +93,7 @@ export default class Solver extends Component {
   }
 
   renderContent() {
+	  /*
     if (!this.props.account) {
       return (
         <div className="main__hero">
@@ -105,7 +106,7 @@ export default class Solver extends Component {
         </div>
       );
     }
-
+	*/
     if (this.state.results) {
       return (
         <Results imageSrc={this.state.imageSrc} data={this.state.results}
@@ -113,18 +114,13 @@ export default class Solver extends Component {
       );
     }
 
-    if (this.state.captureMethod === 'webcam') {
-      return (
-        <Webcam onCancel={() => this.setState({ captureMethod: null })}
-          onCapture={(imageSrc) => this.capture(imageSrc)} />
-      );
-    }
+
 
     return (
-      <div>
+     <div>
 
         <div className="main__prompt">
-          Select a model and data source for the <span className="main__prompt__highlight">redhIO</span> Solver
+          Select a model and a data source for the <span className="main__prompt__highlight">redhIO</span> Solver
         </div>
         { this.state.isLoading
           ? <div className="main__body">
@@ -143,17 +139,44 @@ export default class Solver extends Component {
               </SelectField>
             </div>
             <div className="main__body__options">
-              <Browse onSelectFile={(file) => this.capture(file[0])} />
-              <button className="main__body__options__button" onClick={() => { this.setState({ captureMethod: 'webcam' }) }}>
-                <WebcamIcon style={{ height: 100, width: 100, color: '#ffffff' }} />
-                <div className="main__body__options__button__text">Webcam</div>
-              </button>
+				<form id="modelform" name="modelform" action="http://api.redh.io:8000/api/solve/fh" method="POST">
+					Upload:<input type="file" name="file" id="file"  /><br/>
+					Text:<input type="text" name="modeltext" id="modeltext"  /><br/>
+					Solvers:<select name="solver">
+						  <option value="FH">FiniteHorizon</option>
+						  <option value="VI">ValueIteration</option>
+						  <option value="PI">PolicyIteration</option>
+						  <option value="QRL">QLearning</option>
+					</select> <br/>
+					Simulations:<input type="text" name="MAX_ITERATIONS" id="MAX_ITERATIONS" defaultValue="50" /><br/>
+					Discount:<input type="text" name="gamma" id="gamma" defaultValue="0.92" /><br/>
+					Learning:<input type="text" name="epsilon" id="epsilon" defaultValue="0.01" /><br/>
+					Products:<input type="text" name="states" id="states" defaultValue="3" /><br/>
+					Policies:<input type="text" name="actions" id="actions" defaultValue="2" /><br/>
+					<input type="submit" id="submit"  value="Solve" />
+						<br/> 
+						<br/>
+						<textarea name="modeldata" id="modeldata" form="modelform" defaultValue="Enter Finite Horizon model data here..."></textarea> 
+						<br/>Price Switching:<br/><textarea name="modelt" id="modelt" form="modelform" defaultValue="[[[ 0.1,  0.9,  0.0 ],
+						[ 0.1,  0.0 ,  0.9],
+						[ 0.1,  0.0 ,  0.9]],
+						
+						[[ 1.0 ,  0.0 ,  0.0 ],
+						[ 1.0 ,  0.0 ,  0.0 ],
+						[ 1.0 ,  0.0 ,  0.0 ]]]"></textarea> 
+						<br/>Pricing Policy:<br/><textarea name="modelr" id="modelr" form="modelform" defaultValue="[[ 0.0,  0.0],
+						[ 0.0,  1.0],
+						[ 4.0,  2.0]]"></textarea> 
+						
+					<br/><br/>
+					
+				</form>				
             </div>
           </div>
         }
         <div className="main__fineprint">
           <span className="main__walletId">
-            Wallet: { this.props.account.walletId }
+            Wallet: 
           </span>
         </div>
         <div className="main__fineprint">
