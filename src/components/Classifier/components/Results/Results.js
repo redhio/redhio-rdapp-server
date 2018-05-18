@@ -56,9 +56,6 @@ export default class Results extends Component {
             <img className="results__body__image-container__image" src={this.props.imageSrc}
               alt="Classified image" />
           </div>
-          <div className="results__body__data">
-            { this.renderData() }
-          </div>
           <div className="table">
             <table>
             <tr>
