@@ -12,15 +12,12 @@ class GraphApp extends Component {
     render() {
         return (
             <div className="GraphApp">
-                {/* Add Widgets to display */}
-                <ListWidgetContainer href="http://api.redh.io:8000/stats/top" heading="Top Ranked Models" rowspan={3} />
-                <NumberWidgetContainer href="http://api.redh.io:8000/stats/models" heading="Published Models" />
-                <GraphWidgetContainer href="http://api.redh.io:8000/stats/utilization" heading="Usage Over Time" colspan={2} rowspan={2} />
-                <NumberWidgetContainer href="http://api.redh.io:8000/stats/engines" heading="Engines" />
-                <NumberWidgetContainer href="http://api.redh.io:8000/stats/subscriptions" heading="Subscriptions'" />
-                <NumberWidgetContainer href="http://api.redh.io:8000/stats/response" heading="4 Hour Response %" />
-                <NumberWidgetContainer href="http://api.redh.io:8000/stats/solved" heading="7 Day Solved %" />
-            </div>
+            <ListWidgetContainer href="http://api.redh.io:8000/stats/top" heading="Top Ranked Models" rowspan={2} />
+            <NumberWidgetContainer href="http://api.redh.io:8000/stats/models" heading="Published Models" />
+            <NumberWidgetContainer href="http://api.redh.io:8000/stats/solved" heading="7 Day Solved %" />
+            <NumberWidgetContainer href="http://api.redh.io:8000/stats/response" heading="4 Hour Response %" />
+            <GraphWidgetContainer href="http://api.redh.io:8000/stats/utilization" heading="Usage Over Time" colspan={3} rowspan={1} />
+        </div>
 
         );
     }

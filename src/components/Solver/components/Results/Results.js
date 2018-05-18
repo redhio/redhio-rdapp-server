@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 import { confirmClassification } from 'services/web3Api';
 import { toastError } from 'services/toastEmitter';
+import SolverWidgetContainer from './components/SolverWidgetContainer';
+
 import './styles/results.scss';
+import './styles/SolverApp.css';
 
 export default class Results extends Component {
 
@@ -60,6 +63,10 @@ export default class Results extends Component {
             </div>
             : <RaisedButton label="Start Over" primary onClick={() => this.props.onCancel()} />
           }
+          <div>
+          This is where the graph goes
+          </div>
+
         </div>
       </div>
     );

@@ -1,0 +1,49 @@
+.BaseWidget {
+    background-color: #e0e0e0;
+    padding: 1rem;
+}
+
+/* autoprefixer: off */
+@supports(display:grid) {
+    .BaseWidget {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "header"
+            "content";
+    }
+
+    .App > * + * {
+        margin-top: 0;
+    }
+}
+
+.BaseWidget .header {
+    grid-area: header;
+    line-height: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.BaseWidget h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 1;
+    text-overflow: ellipsis;
+}
+
+.BaseWidget .Loading {
+    margin-left: 0.5rem;
+}
+
+.BaseWidget .content {
+    grid-area: content;
+    padding-top: 1rem;
+}
+
+@media(max-width: 600px) {
+    .BaseWidget .content {
+        padding-top: 0.25rem;
+    }
+}

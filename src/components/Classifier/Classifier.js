@@ -15,6 +15,8 @@ import { classifyImage } from 'services/redhioApi';
 import { toastError } from 'services/toastEmitter';
 import './styles/classifier.scss';
 
+
+
 export default class Classifier extends Component {
 
   constructor() {
@@ -170,7 +172,7 @@ export default class Classifier extends Component {
 
   render () {
     return (
-      <div className="container-narrow">
+      <div className="container-wide">
         <div className="main">
           { this.renderContent() }
         </div>
