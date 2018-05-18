@@ -97,11 +97,11 @@ export default class Main extends Component {
 
             </div>
             <div className="GraphApp">
-              <ListWidgetContainer href="http://localhost:3001/stats/top" heading="Top Ticket Answerers" rowspan={2} />
-              <NumberWidgetContainer href="http://localhost:3001/tickets/open" heading="Open Ticket Total" />
-              <NumberWidgetContainer href="http://localhost:3001/tickets/today" heading="Tickets Opened Today" />
-              <NumberWidgetContainer href="http://localhost:3001/tickets/today" heading="Tickets Opened Today" />
-              <GraphWidgetContainer href="http://localhost:3001/tickets/progression" heading="Tickets Over Time" colspan={3} rowspan={1} />
+              <ListWidgetContainer href="http://api.redh.io:8000/stats/top" heading="Top Ranked Models" rowspan={2} />
+              <NumberWidgetContainer href="http://api.redh.io:8000/stats/models" heading="Published Models" />
+              <NumberWidgetContainer href="http://api.redh.io:8000/stats/solved" heading="7 Day Solved %" />
+              <NumberWidgetContainer href="http://api.redh.io:8000/stats/response" heading="4 Hour Response %" />
+              <GraphWidgetContainer href="http://api.redh.io:8000/stats/utilization" heading="Usage Over Time" colspan={3} rowspan={1} />
             </div>
           </div>
         }

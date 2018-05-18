@@ -27,6 +27,7 @@ export default class Header extends Component {
               <FlatButton label="Dashboard" primary onClick={() => this.gotoPath('')} />
               <FlatButton label="Profile" primary onClick={() => this.gotoPath('')} />
               <FlatButton label="Classifier" primary onClick={() => this.gotoPath('classifier')} />
+              <FlatButton label="Solver" primary onClick={() => this.gotoPath('api/solve/VI')} />
               <FlatButton label="Engines" primary onClick={() => this.gotoPath('')} />
               <FlatButton label="Log Out" primary onClick={() => this.props.onLogout()} />
             </div>
