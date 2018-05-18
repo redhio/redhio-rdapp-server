@@ -1,0 +1,3 @@
+remixd -S .
+
+pause
