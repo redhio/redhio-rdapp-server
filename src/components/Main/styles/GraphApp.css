@@ -1,0 +1,34 @@
+.GraphApp {
+    display: block;
+    min-height: 100vh;
+    padding: 1rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.GraphApp > * + * {
+    margin-top: 1rem;
+}
+
+/* autoprefixer: off */
+@supports(display:grid) {
+    .GraphApp {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
+
+    .GraphApp > * + * {
+        margin-top: 0;
+    }
+}
+
+@media(max-width: 600px) {
+    .GraphApp {
+        display: block;
+    }
+
+    .GraphApp > * + * {
+        margin-top: 1rem;
+    }
+}
