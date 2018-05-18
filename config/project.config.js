@@ -24,7 +24,7 @@ const config = {
   // ----------------------------------
   // Server Configuration
   // ----------------------------------
-  server_host : 'app.redh.io', //ip.address(), // use string 'localhost' to prevent exposure on local network
+  server_host : 'localhost', //ip.address(), // use string 'localhost' to prevent exposure on local network
   server_port : process.env.PORT || 8081,
 
   // ----------------------------------

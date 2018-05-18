@@ -58,7 +58,7 @@ export default class Main extends Component {
   }
 
 
-  
+
 
 
 
@@ -69,7 +69,7 @@ export default class Main extends Component {
       return (
         <div className="main__hero">
           <div className="main__hero__title">
-            Welcome to <span className="main__hero__title__highlight">redhIO</span> 
+            Welcome to <span className="main__hero__title__highlight">redhIO</span>
           </div>
           <div className="main__hero__subtitle">
             <Link to="signup">Sign up</Link> or <Link to="login">Log In</Link> to continue
@@ -94,17 +94,14 @@ export default class Main extends Component {
           </div>
           : <div className="main__body">
             <div className="main__body__select">
-			main dashboard selection
+
             </div>
-            <div className="main__body__options">
-			main dashboard options
-            </div>
-            <div className="App">
-              <ListWidgetContainer href="http://api.redh.io:8000/stats/top" heading="Top Ranked Models" rowspan={2} />
-              <NumberWidgetContainer href="http://api.redh.io:8000/stats/models" heading="Models" />
-              <NumberWidgetContainer href="http://api.redh.io:8000/stats/engines" heading="Engines" />
-              <NumberWidgetContainer href="http://api.redh.io:8000/stats/subscriptions" heading="Total Subscriptions" />
-              <GraphWidgetContainer href="http://api.redh.io:8000/stats/utilization" heading="Usage Over Time" colspan={3} rowspan={1} />
+            <div className="GraphApp">
+              <ListWidgetContainer href="http://localhost:3001/stats/top" heading="Top Ticket Answerers" rowspan={2} />
+              <NumberWidgetContainer href="http://localhost:3001/tickets/open" heading="Open Ticket Total" />
+              <NumberWidgetContainer href="http://localhost:3001/tickets/today" heading="Tickets Opened Today" />
+              <NumberWidgetContainer href="http://localhost:3001/tickets/today" heading="Tickets Opened Today" />
+              <GraphWidgetContainer href="http://localhost:3001/tickets/progression" heading="Tickets Over Time" colspan={3} rowspan={1} />
             </div>
           </div>
         }
@@ -115,7 +112,7 @@ export default class Main extends Component {
         </div>
         <div className="main__fineprint">
           <span className="main__sla">
-            Status: Block#
+            SLA: ABC123
           </span>
         </div>
       </div>
@@ -124,10 +121,9 @@ export default class Main extends Component {
 
   render () {
     return (
-      <div className="container-narrow">
-        <div className="main">
+      <div className="container-wide">
           { this.renderContent() }
-        </div>
+
       </div>
     );
   }
@@ -136,4 +132,3 @@ export default class Main extends Component {
 Main.propTypes = {
   account: PropTypes.object
 };
-

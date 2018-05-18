@@ -13,7 +13,7 @@ import MenuItem from 'material-ui/MenuItem';
 import { purchaseClassification, getModels } from 'services/web3Api';
 import { classifyImage } from 'services/redhioApi';
 import { toastError } from 'services/toastEmitter';
-import './styles/main.scss';
+import './styles/classifier.scss';
 
 export default class Classifier extends Component {
 
@@ -156,7 +156,7 @@ export default class Classifier extends Component {
         }
         <div className="main__fineprint">
           <span className="main__walletId">
-            Wallet: 
+            Wallet:
           </span>
         </div>
         <div className="main__fineprint">
@@ -182,4 +182,3 @@ export default class Classifier extends Component {
 Classifier.propTypes = {
   account: PropTypes.object
 };
-

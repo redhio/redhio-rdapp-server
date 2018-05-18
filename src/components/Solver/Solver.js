@@ -11,7 +11,7 @@ import MenuItem from 'material-ui/MenuItem';
 import { purchaseClassification, getModels } from 'services/web3Api';
 import { classifyImage } from 'services/redhioApi';
 import { toastError } from 'services/toastEmitter';
-import './styles/main.scss';
+import './styles/solver.scss';
 
 export default class Solver extends Component {
 
@@ -179,4 +179,3 @@ export default class Solver extends Component {
 Solver.propTypes = {
   account: PropTypes.object
 };
-
