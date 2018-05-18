@@ -1,0 +1,99 @@
+@import '~react-joyride/lib/react-joyride';
+@import 'src/styles/colors.scss';
+
+.main {
+  padding: 0 1rem 0 1rem;
+
+  &__hero {
+    padding: 6rem 0;
+    color: $darkGrey;
+
+    &__title {
+      text-align: center;
+      font-size: 4rem;
+
+      &__highlight {
+        color: $primary;
+      }
+    }
+
+    &__subtitle {
+      text-align: center;
+      font-size: 1rem;
+      margin: 2rem 0;
+    }
+  }
+
+  &__prompt {
+    color: $darkGrey;
+    text-align: center;
+    font-size: 2rem;
+    margin: 4rem auto 1rem auto;
+    max-width: 30rem;
+
+    @media screen and (max-width: 30em) {
+      font-size: 1.5rem;
+    }
+
+    &__highlight {
+      color: $primary;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__loading {
+      margin: 2rem 0;
+    }
+
+    &__select {
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      max-width: 21rem;
+    }
+
+    &__options {
+      margin: 2rem auto 2rem auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      max-width: 24rem;
+
+      &__button {
+        padding: 1rem 1.5rem;
+        font-size: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-style: none;
+        background-color: $primary;
+        color: $white;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+        transition: box-shadow 0.3s;
+
+        &:hover {
+          box-shadow: rgba(0, 0, 0, 0.12) 4px 4px 10px, rgba(0, 0, 0, 0.12) 4px 4px 10px;
+        }
+
+        &__text {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+
+  &__fineprint {
+    text-align: center;
+    font-size: 0.875rem;
+    color: $darkGrey;
+    margin: 1rem 0 1rem 0;
+    word-break: break-all;
+  }
+}
+
+
