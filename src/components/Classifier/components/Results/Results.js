@@ -23,23 +23,20 @@ export default class Results extends Component {
   renderData() {
     return this.props.data.map((result) => {
       return (
+	   
         <div className="results__body__data__row" key={result.response_data['label']}>
-          <div className="results__body__data__row__label">
-            { result.name }
+          <div className="results__body__data__row__confidence">
+            { result.response_data['rank'] }
 			
           </div>
-          <div className="results__body__data__row__confidence">
+          <div className="results__body__data__row__label">
             { result.response_data['label'] }
           </div>
           <div className="results__body__data__row__confidence">
             { result.response_data['confidence'] }
-          </div>
-		  <div className="results__body__data__row" key={result.response_data['label']}>
-			  <div className="results__body__data__row__label">
-				{ result.response_data['label'] }
-			  </div>
-		  
-		  </div>
+          </div><br/>
+		<textarea name="modelt" id="modelt" form="modelform" defaultValue={ result.response_data['label'] }></textarea>
+
         </div>
 
       );
@@ -55,6 +52,7 @@ export default class Results extends Component {
               alt="Classified image" />
           </div>
           <div className="results__body__data">
+		    
             { this.renderData() }
           </div>
         </div>

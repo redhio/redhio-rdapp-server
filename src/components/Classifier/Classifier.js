@@ -156,7 +156,7 @@ export default class Classifier extends Component {
         }
         <div className="main__fineprint">
           <span className="main__walletId">
-            Wallet:
+            Wallet: 
           </span>
         </div>
         <div className="main__fineprint">
