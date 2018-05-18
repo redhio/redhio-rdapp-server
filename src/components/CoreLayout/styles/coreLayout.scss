@@ -14,8 +14,10 @@ body {
 
 .body {
   height: 100%;
-  flex-flow: column;
-  display: flex;
+  //flex-flow: column;
+  //display: flex;
+  margin-left: 160px; /* Same as the width of the sidebar */
+  //padding: 0px 10px;
 }
 
 .container {

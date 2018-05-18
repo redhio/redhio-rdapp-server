@@ -59,11 +59,6 @@ export default class Main extends Component {
 
 
 
-
-
-
-
-
   renderContent() {
     if (!this.props.account) {
       return (
@@ -93,8 +88,7 @@ export default class Main extends Component {
             </div>
           </div>
           : <div className="main__body">
-            <div className="main__body__select">
-
+            //<div className="main__body__select">
             </div>
             <div className="GraphApp">
               <ListWidgetContainer href="http://api.redh.io:8000/stats/top" heading="Top Ranked Models" rowspan={2} />
